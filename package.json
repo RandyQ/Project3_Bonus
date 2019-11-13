@@ -1,14 +1,14 @@
 {
-  "name": "skeleton",
+  "name": "project3_bonus",
   "version": "1.0.0",
-  "description": "This is a simple app to get you started. Change the description as needed.",
+  "description": "Project 3 bonus.  Web app that consumes API and lists stores and their inventory",
   "main": "app.js",
   "scripts": {
     "start": "node ./app.js",
     "live": "nodemon ./app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Your Name Here",
+  "author": "Randy Quimby",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.0",
