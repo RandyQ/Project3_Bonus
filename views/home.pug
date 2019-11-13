@@ -1,0 +1,46 @@
+extends layout
+
+block content 
+ .row
+  .col-md-1(style={background: 'blue'})
+  .col-md
+    h1 Search
+    form(method="GET" action='/')
+      label Search Term:
+      br
+      input(type="text", name="q")
+      br
+      label Zipcode:
+      br
+      input(type="text", name="zipcode")
+      br
+      label Mileage Radius: 
+      br
+      input(type="text", name="radius")
+      br
+      p Must enter both city and state or neither
+      label City: &nbsp
+      input(type="text", name="city") 
+      label &nbsp State: &nbsp
+      input(type="text", name="state")
+      br
+      br
+      input(type="submit", value="Search Stores")
+      br
+      br
+      if stores
+        each store in stores
+          h5: strong #{store.name}
+          ul
+            li Address: #{store.address}
+            li Zipcode: #{store.zipcode}
+            br
+            label: strong Inventory:
+            each item in store.items
+              ul
+                li #{item.name}
+                li Description: #{item.description}
+                li Report date: #{item.reportDate}
+                li Quantity: #{item.quantity}
+                br
+    
