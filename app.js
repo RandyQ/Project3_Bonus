@@ -18,12 +18,14 @@ app.set('port', process.env.PORT || 3001);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Home page for search screen and results
 app.get('/', async function(req, res) {
 	res.render('home', {
 		stores: (await getStores(req.query))
 	});
 });
 
+// Searches stores via an API
 function getStores(query) {
 	axios.defaults.headers.common['x-api-key'] = "test";
 	let url = `http://localhost:3000/search/items?q=${query.q}&zip=${query.zipcode}&radius=${query.radius}&city=${query.city}&state=${query.state}`;
